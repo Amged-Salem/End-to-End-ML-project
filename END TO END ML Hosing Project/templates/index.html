@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Home</title>
+{% endblock %}
+
+
+{% block body %}
+<br>
+<h2>Home</h2>
+<br>
+
+<div>
+    <div class="bg-light p-4 rounded">
+        <div class="col-sm-12 mx-auto">
+            <h4>Regression Model for Houses Prices Prediction</h4>
+            <hr>
+            <h5> Problem Definition </h5>
+            <ul>
+                <li>The Dataset consists of 9 Features.</li>
+                <li>The target is (median_house_value).</li>
+                <li>Features are (longitude, latitude, housing_median_age, total_rooms, total_bedrooms, population,
+                    household, median_income, ocean_proximity).</li>
+                <li>
+                    The final chosen Model is XGBoost, and The evaluation metric is (RMSE).
+                </li>
+                <li>
+                    XGBoost achieved about (RMSE=45878.2) on train Dataset using Cross Validation, and about
+                    (RMSE=44546.8) on test Dataset.
+                </li>
+                <hr>
+                <br>
+                <p>
+                    <a class="btn btn-success" href="/predict" role="button">Predict one Instance &raquo;</a>
+                </p>
+        </div>
+    </div>
+</div>
+
+<hr>
+<br>
+<br>
+<br>
+<div class="container">
+    <a href="/predict">
+        <img alt="Models Comparison Image" src="{{url_for('static', filename='models_comapre.png')}}"
+            class="rounded float-left" width="1000" height="600">
+    </a>
+</div>
+
+
+{% endblock %}
